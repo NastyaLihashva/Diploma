@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин одежды</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      function add_to_liked(id) {
+        fetch('/add_to_liked', {
+          method: 'POST',
+          body: new URLSearchParams({id: id})
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Элемент добавлен в избранное!');
+          } else {
+            alert('Ошибка: ' + response.statusText);
+          }
+        });
+      }
+      </script>
+  </head>
+  <body>
+    <header class="header">
+        <nav class="header__navigation">
+            <ul>
+              <li class="nav_el"><a class="link_el" href="/">Home</a></li>
+              <li class="nav_el"><a class="link_el" href="/liked">Liked</a></li>
+              <li class="nav_el"><a class="link_el" href="/catalog">Catalog</a></li>
+            </ul>
+          </nav>
+        <h1 class="header__title">CLOTHING RECOMMENDATION</h1>
+
+    </header>
+    <main>
+      {% for i in range(len) %}
+      <div class="item">
+        <a href="/info?id={{ result[i] }}">
+          <img class="img_clothes" src="{{ url_for('get_image', filename=result[i]+'.jpg') }}" alt="Image {{ result[i] }}" />
+          <h2>{{ names[i] }}</h2>
+        </a>
+        <button class="button_liked" onclick="add_to_liked({{ result[i] }})">Like</button>
+      </div>
+      </div>
+      {% endfor %}
+    </main>
+  </body>
+</html>
+
+
+
+

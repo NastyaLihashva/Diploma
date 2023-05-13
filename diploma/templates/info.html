@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин одежды</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header_page">
+        <nav class="header_page__navigation">
+            <ul>
+              <li class="nav_el"><a class="link_el" href="/">Home</a></li>
+              <li class="nav_el"><a class="link_el" href="/liked">Liked</a></li>
+              <li class="nav_el"><a class="link_el" href="/catalog">Catalog</a></li>
+            </ul>
+          </nav>
+        <h1 class="header_page__title">INFORMATION</h1>
+    </header>
+    <main>
+      <div class="item_page">
+        <img class ="img_page_clothes" src="{{ url_for('get_image', filename=id+'.jpg') }}" alt="Image {{ id }}" />
+        <div class="item_page__info">
+            <h2 class="img_page__title"> {{ name }}</h2>
+            <div class="img_page__text">
+                <p class="img_text">
+                    Master Category: {{ master_cat }}
+                </p>
+                <p class="img_text">
+                    Sub Category: {{ sub_cat }}
+                </p>
+                <p class="img_text">
+                    Article Type: {{ article_type }}
+                </p>
+                <p class="img_text">
+                    Gender: {{ gender }}
+                </p>
+                <p class="img_text">
+                  Base Color: {{ color }}
+                </p>
+                <p class="img_text">
+                  Season: {{ season }}
+                </p>
+            </div>
+        </div>
+      </div>
+    </main>
+>
+  </body>
+</html>
+
+
+
+

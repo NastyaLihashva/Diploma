@@ -1,0 +1,267 @@
+/* Стили для заголовка */
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  color: #353535;
+  font-family: 'Roboto';
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+li {
+  list-style-type: none; /* Убираем маркеры */
+ }
+ ul {
+  margin-left: 0; /* Отступ слева в браузере IE и Opera */
+  padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+ }
+ a{
+  text-decoration: none;
+  color: #353535;
+  cursor: pointer;
+
+ }
+
+.header {
+    width: 100%;
+    min-height: 450px;
+    background-image: url('/static/css/assets/bg.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    text-align: center;
+    margin: 0 0 84px 0;
+    justify-content: center;
+    
+}
+
+.header__navigation{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: rgba(79, 62, 49, 0.2);
+  height: 80px;
+  justify-content: center;
+  padding: 0 200px 0 0;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  margin: 0 0 0 0;
+  justify-content: end;
+}
+
+.nav_el{
+  font-weight: 600;
+  font-size: 20px;
+  color: #353535;
+  margin: 0 40px 0 0;
+}
+
+.link_el{
+  color: #353535;
+  transition: 0.3s;
+}
+
+.link_el:hover{
+  color: rgba(247, 242, 239, 0.829);
+}
+  
+.header__title{
+    margin: 90px 0 0 0px;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+main{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+  /* Стили для блоков товаров */
+.item {
+    display: inline-block;
+    position: relative;
+    margin: 0 20px 30px 20px;
+    width: calc(20% - 10px);
+    height: 420px;
+    text-align: center;
+    border: 2px solid rgba(79, 62, 49, 0.2);
+    float: left;
+}
+
+.img_clothes{
+  width: 230px;
+  height: 300px;
+  border-bottom: 2px solid rgba(79, 62, 49, 0.2);
+}
+  
+  /* Стили для названия товара */
+.item h2 {
+    margin: 13px 10px 8px 10px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+    text-transform: capitalize;
+    
+}
+  
+.button_liked {
+  /*background-color: #4CAF50; /* Зеленый цвет фона */
+  border: 2px solid rgba(79, 62, 49, 0.2);
+  color: #353535; /* Белый цвет текста */
+  padding: 5px 20px; /* Отступы внутри кнопки */
+  text-align: center; /* Центрируем текст внутри кнопки */
+  text-decoration: none; /* Убираем подчеркивание у ссылки */
+  display: inline-block; /* Убираем перенос строки */
+  font-size: 14px; /* Размер шрифта */
+  margin: 4px 2px 15px 2px; /* Отступы вокруг кнопки */
+  cursor: pointer; /* Задаем вид курсора при наведении */
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+
+.button_liked:hover{
+  color: rgba(16, 119, 13, 1);
+  background-color: rgba(113, 193, 110, 0.2);
+}
+
+
+/*--------info page---------------*/
+.header_page {
+  width: 100%;
+  min-height: 160px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  text-align: center;
+  margin: 0;
+  justify-content: center;
+  
+}
+ 
+
+.header_page__navigation{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: rgba(79, 62, 49, 0.2);
+  height: 80px;
+  justify-content: center;
+  padding: 0 200px 0 0;
+}
+
+.header_page__title{
+  margin: 20px 0 0 0px;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.item_page {
+  display: flex;
+  margin: 0 40px 30px 40px;
+  padding: 20px;
+  /*width: 307px;
+  height: 500px;*/
+  text-align: center;
+  border: 2px solid rgba(79, 62, 49, 0.2);
+  background-color: rgba(79, 62, 49, 0.071);
+
+}
+
+.img_page_clothes{
+  width: 383px;
+  height: 500px;
+  border: 2px solid rgba(79, 62, 49, 0.2);
+}
+
+.item_page__info{
+  display: flex;
+  flex-direction: column;
+}
+
+.img_page__title{
+  margin: 0 0 0 100px;
+  text-transform: capitalize;
+  font-size: 26px;
+  border-bottom: 2px solid rgba(79, 62, 49, 0.2);
+}
+
+.img_page__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 0 100px;
+  text-align: start;
+}
+
+.img_text{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+.button_delete {
+  /*background-color: #4CAF50; /* Зеленый цвет фона */
+  border: 2px solid rgba(79, 62, 49, 0.2);
+  color: #353535; 
+  padding: 5px 20px; /* Отступы внутри кнопки */
+  text-align: center; /* Центрируем текст внутри кнопки */
+  text-decoration: none; /* Убираем подчеркивание у ссылки */
+  display: inline-block; /* Убираем перенос строки */
+  font-size: 14px; /* Размер шрифта */
+  margin: 4px 2px 15px 2px; /* Отступы вокруг кнопки */
+  cursor: pointer; /* Задаем вид курсора при наведении */
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+
+.button_delete:hover{
+  color: rgb(119, 36, 13);
+  background-color: rgba(193, 110, 110, 0.2);
+}
+
+
+/*----catalog-------*/
+.catalog_ul{
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0 100px;
+  justify-content: center;
+  text-align: center;
+  margin: 0 0 40px 0;
+  /*white-space: nowrap;*/
+}
+
+.catalog_li {
+  display: inline-block;
+  margin-right: 10px;
+  border: 2px solid rgba(79, 62, 49, 0.2);
+  padding: 10px;
+  margin: 10px 10px;
+  text-transform: capitalize;
+  background-color: rgba(212, 199, 189, 0.2);
+}
+
+.header__cat{
+  text-transform: uppercase;
+}

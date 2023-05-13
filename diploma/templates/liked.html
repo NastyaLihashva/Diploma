@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин одежды</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      function delete_liked(id) {
+        fetch('/delete_liked', {
+          method: 'POST',
+          body: new URLSearchParams({id: id})
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Элемент удален из избранного!');
+          } else {
+            alert('Ошибка: ' + response.statusText);
+          }
+        });
+      }
+      </script>
+  </head>
+  <body>
+    <header class="header">
+        <nav class="header__navigation">
+            <ul>
+              <li class="nav_el"><a class="link_el" href="/">Home</a></li>
+              <li class="nav_el"><a class="link_el" href="/liked">Liked</a></li>
+              <li class="nav_el"><a class="link_el" href="/catalog">Catalog</a></li>
+            </ul>
+          </nav>
+        <h1 class="header__title">LIKED CLOTHES</h1>
+
+    </header>
+    <main>
+      {% if result %}
+        {% for i in range(len) %}
+        <div class="item">
+          <a href="/info?id={{ result[i] }}">
+            <img class="img_clothes" src="{{ url_for('get_image', filename=result[i]+'.jpg') }}" alt="Image {{ result[i] }}" />
+            <h2>{{ names[i] }}</h2>
+          </a>
+          <button class="button_delete" onclick="delete_liked({{ result[i] }})">Dislike</button>
+        </div>
+        {% endfor %}
+      {% else %}
+          <p>Your liked items list is empty. Please go to the catalog to view clothing items.</p>
+      {% endif %}
+
+    </main>
+    <!--<p>{{ result }}</p>-->
+    <!--{% for id in result %}
+        <div>
+            <img src="{{ url_for('get_image', filename=result[0]+'.jpg') }}" alt="Image {{ result[0] }}" />
+        </div>
+    {% endfor %}-->
+>
+  </body>
+</html>
+
+
+
+
