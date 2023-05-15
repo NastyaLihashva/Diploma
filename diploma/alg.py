@@ -170,13 +170,13 @@ class Info:
         return name, master_cat, sub_cat, article_type, gender, color, season;
 
     def get_info(self, id):
-        master_cat = str(self.df_copy.loc[df_copy['id'] == id, 'masterCategory'].iloc[0])
-        sub_cat = str(self.df_copy.loc[df_copy['id'] == id, 'subCategory'].iloc[0])
-        article_type = str(self.df_copy.loc[df_copy['id'] == id, 'articleType'].iloc[0])
-        gender = str(self.df_copy.loc[df_copy['id'] == id, 'gender'].iloc[0])
-        name = str(self.df_copy.loc[df_copy['id'] == id, 'productDisplayName'].iloc[0])
-        color =  str(self.df_copy.loc[df_copy['id'] == id, 'baseColour'].iloc[0])
-        season =  str(self.df_copy.loc[df_copy['id'] == id, 'season'].iloc[0])
+        master_cat = str(self.df_copy.loc[self.df_copy['id'] == id, 'masterCategory'].iloc[0])
+        sub_cat = str(self.df_copy.loc[self.df_copy['id'] == id, 'subCategory'].iloc[0])
+        article_type = str(self.df_copy.loc[self.df_copy['id'] == id, 'articleType'].iloc[0])
+        gender = str(self.df_copy.loc[self.df_copy['id'] == id, 'gender'].iloc[0])
+        name = str(self.df_copy.loc[self.df_copy['id'] == id, 'productDisplayName'].iloc[0])
+        color =  str(self.df_copy.loc[self.df_copy['id'] == id, 'baseColour'].iloc[0])
+        season =  str(self.df_copy.loc[self.df_copy['id'] == id, 'season'].iloc[0])
         return name, master_cat, sub_cat, article_type, gender, color, season
 
 
